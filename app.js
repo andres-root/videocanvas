@@ -4,8 +4,11 @@
 	var context = canvas.getContext('2d');
 	canvas.width = window.innerWidth;
 	canvas.height	= window.innerHeight;
+	context.rect(20,20,150,100);
+	context.fillStyle="red";
+	context.fill();
 
-	video.addEventListener('play', function() {
+	video.addEventListener('click', function() {
 		var _this = this;
 
 		(function loop() {
