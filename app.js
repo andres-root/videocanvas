@@ -1,11 +1,17 @@
 (function (){
 	var video = document.querySelector('#video');
+	var canvas = document.querySelector('#canvas');
+	var context = canvas.getContext('2d');
 
-	video.addEventListener('click', function() {
-		var canvas = document.querySelector('#canvas');
-		var context = canvas.getContext('2d');
+	video.addEventListener('play', function() {
+		var _this = this;
 
-		context.drawImage(video, 1, 1);
+		(function loop() {
+			if (!_this.paused && !_this.ended) {
+				context.drawImage(_this, 0, 0);
+				setTimeout(loop, 1000 / 30);
+			}
+		})();
 	}, false);
 
 })();
