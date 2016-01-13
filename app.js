@@ -2,6 +2,8 @@
 	var video = document.querySelector('#video');
 	var canvas = document.querySelector('#canvas');
 	var context = canvas.getContext('2d');
+	canvas.width = window.innerWidth;
+	canvas.height	= window.innerHeight;
 
 	video.addEventListener('play', function() {
 		var _this = this;
